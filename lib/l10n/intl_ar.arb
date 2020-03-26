@@ -1,0 +1,503 @@
+{
+  "@@last_modified": "2020-02-23T12:29:40.023239",
+  "loginbtn": "تسجيل الدخول",
+  "@loginbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locale": "ar",
+  "@locale": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lname": "أسم المستخدم",
+  "@lname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lpassword": "كلمة المرور",
+  "@lpassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "subscription": "الاشتراكات",
+  "@subscription": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "subperiod": "المدة",
+  "@subperiod": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "day": "يوم",
+  "@day": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "month": "شهر",
+  "@month": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sar": "ريال سعودي",
+  "@sar": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "country": "الدولة",
+  "@country": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "city": "المدينه",
+  "@city": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "amount": "المبلغ",
+  "@amount": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "citywhereyouaregoingtopay": "المدينة التي ستتم عملية الدفع فيها",
+  "@citywhereyouaregoingtopay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lforgotpass": " نسيت كلمة المرور",
+  "@lforgotpass": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lOr": "او",
+  "@lOr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lDontHaveAccount": "ليس لديك حساب",
+  "@lDontHaveAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signupbtn": "تسجيل ",
+  "@signupbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "useraccount": "مستخدم",
+  "@useraccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doctoraccount": "طبيب",
+  "@doctoraccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hospitalaccount": "مركز",
+  "@hospitalaccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sname": "الأسم",
+  "@sname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "susername": "أسم المستخدم",
+  "@susername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sphone": "رقم الهاتف",
+  "@sphone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "spassword": "كلمة المرور",
+  "@spassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sconfirmpass": " تأكيد كلمة المرور",
+  "@sconfirmpass": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "closerHospital": "الأقرب",
+  "@closerHospital": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "govHospital": "حكومي",
+  "@govHospital": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "privetHospital": "خاص",
+  "@privetHospital": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "independent": "مستقل",
+  "@independent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "الرئيسية",
+  "@home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consandarticls": "الاستشارات والمقالات",
+  "@consandarticls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservation": "الحجوزات",
+  "@reservation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myaccount": "حسابي",
+  "@myaccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialistshos": "الأخصائيين",
+  "@specialistshos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialistshosname": "الأسم",
+  "@specialistshosname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialization": "التخصص",
+  "@specialization": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "informationhos": "معلومات",
+  "@informationhos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "absorptivecapacity": "الطاقة الأستيعابية",
+  "@absorptivecapacity": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "medicalstaff": "الطاقم الطبي",
+  "@medicalstaff": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openingdate": "تاريخ الافتتاح",
+  "@openingdate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "perinterview": "للجلسة ",
+  "@perinterview": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactus": "التواصل",
+  "@contactus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservationbtn": "حجز",
+  "@reservationbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "message": " رسالة",
+  "@message": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consult": "استشر",
+  "@consult": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "qualifications": "المؤهلات",
+  "@qualifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "enterpatientgender": "ادخل عمر المريض",
+  "@enterpatientgender": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterpatientdescription": "ادخل التفاصيل",
+  "@enterpatientdescription": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consultcontent": "تفاصيل الاستشاره   ",
+  "@consultcontent": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "publishbtn": "انشر  ",
+  "@publishbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+    "addarticl": "اضف مقالة  ",
+  "@addarticl": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "articlname":  "اسم المقال ",
+  "@articlname": {
+    "type": "text",
+    "placeholders": {}
+  },
+    "articlcontent":  "محتوى المقال ",
+  "@articlcontent": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "enterarticlcontent":  " ادخل محتوى المقال ",
+  "@enterarticlcontent": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "addcomment":  " اضافة تعليق   ",
+  "@addcomment": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "replybtn":  " رد",
+  "@replybtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "morebtn":  " تكملة القراءة ",
+  "@morebtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "source": "المصدر",
+  "@source": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "year": "السنة",
+  "@year": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "experience": "الخبرات",
+  "@experience": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "docrequest": "الطلبات",
+  "@docrequest": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "upcoming": "القادمة ",
+  "@upcoming": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "personalinformation": "المعلومات الشخصية ",
+  "@personalinformation": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "address": "  العنوان ",
+  "@address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "album": "  المعرض ",
+  "@album": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "nationality": "الجنسية ",
+  "@nationality": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "priceoffsession": " سعر الجلسة  ",
+  "@priceoffsession": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "images": "  الصور  ",
+  "@images": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "videos": "  الفيديوهات  ",
+  "@videos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enternumberofthemedicalstaffincenter": "  ادخل عدد الطاقم الطبي في المركز  ",
+  "@enternumberofthemedicalstaffincenter": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "save": "  حفظ  ",
+  "@save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "centerinformation": "  معلومات المركز   ",
+  "@centerinformation": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "location": "  الموقع  ",
+  "@location": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "time": "  الزمن  ",
+  "@time": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "enterTimeofopeningandcloseing": " ادخل زمن فتح واغلاق المركز ",
+  "@enterTimeofopeningandcloseing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doctordata": "    بيانات الطبيب  ",
+  "@doctordata": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "past": "الماضية ",
+  "@past": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservationNum": " حجز رقم ",
+  "@reservationNum": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservtype": "نوع الحجز ",
+  "@reservtype": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "patientname": "أسم االمريض ",
+  "@patientname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "patientage": "العمر ",
+  "@patientage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gender": "الجنس ",
+  "@gender": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "date": "التاريخ ",
+  "@date": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "description": "التفاصيل ",
+  "@description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confrimbtn": "تأكيد ",
+  "@confrimbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancelbtn": "الغاء ",
+  "@cancelbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callbtn": "اتصال ",
+  "@callbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consulting": "الاستشارات ",
+  "@consulting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consultbar": "استشاره ",
+  "@consultbar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "articls": "المقالات ",
+  "@articls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "articlsbar": "مقاله ",
+  "@articlsbar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "researchs": "البحوث ",
+  "@researchs": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "researchbar": "بحث ",
+  "@researchbar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "researchWriter": "الكاتب ",
+  "@researchWriter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dateofpublication": " تاريخ النشر ",
+  "@dateofpublication": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editbtn": "تعديل ",
+  "@editbtn": {
+    "type": "text",
+    "placeholders": {}
+  }
+   "current": "الحالية ",
+  "@current": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addconsult": "اضافة استشارة ",
+  "@addconsult": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "bookreservationtitle": " احجز ",
+  "@bookreservationtitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "enterpatientname": " ادخل اسم المريض ",
+  "@enterpatientname": {
+    "type": "text",
+    "placeholders": {}
+  },
+}

@@ -1,0 +1,503 @@
+{
+  "@@last_modified": "2020-02-23T12:29:40.023239",
+  "loginbtn": "login",
+  "@loginbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "locale": "ar",
+  "@locale": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lname": "UserName",
+  "@lname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doctordata": "  doctor data  ",
+  "@doctordata": {
+    "type": "text",
+    "placeholders": {}
+  },
+    "subscription": "subscription",
+  "@subscription": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "subperiod": "Period",
+  "@subperiod": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "day": "day",
+  "@day": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "month": "month",
+  "@month": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sar": "SAR",
+  "@sar": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "country": "country",
+  "@country": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "city": "city",
+  "@city": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "amount": "amount",
+  "@amount": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "citywhereyouaregoingtopay": "city where you are going to pay ",
+  "@citywhereyouaregoingtopay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lpassword": "Password",
+  "@lpassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lforgotpass": "Forgot Password",
+  "@lforgotpass": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lOr": "or",
+  "@lOr": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "lDontHaveAccount": "Dont have an account",
+  "@lDontHaveAccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signupbtn": "Signup",
+  "@signupbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "useraccount": "User",
+  "@useraccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doctoraccount": "Doctor",
+  "@doctoraccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "hospitalaccount": "Hospital",
+  "@hospitalaccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sname": "Name",
+  "@sname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "susername": "User Name",
+  "@susername": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sphone": "Phone number",
+  "@sphone": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "spassword": "Password",
+  "@spassword": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sconfirmpass": "Confirm Password",
+  "@sconfirmpass": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "closerHospital": "closer",
+  "@closerHospital": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "govHospital": "Goverment",
+  "@govHospital": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "privetHospital": "Privet",
+  "@privetHospital": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "independent": "Independent",
+  "@independent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "home": "Home",
+  "@home": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consandarticls": "Consult & Articls",
+  "@consandarticls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservation": "Reservation",
+  "@reservation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "myaccount": "My Account",
+  "@myaccount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialistshos": "Specialists",
+  "@specialistshos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialistshosname": "name",
+  "@specialistshosname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "specialization": "Specialization",
+  "@specialization": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "informationhos": "Information",
+  "@informationhos": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "absorptivecapacity": "Absorptive capacity",
+  "@absorptivecapacity": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "personalinformation": " Personal Information ",
+  "@personalinformation": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "address": "  Address ",
+  "@address": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "album": "  Album ",
+  "@album": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "nationality": "Nationality ",
+  "@nationality": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "priceoffsession": "price off session ",
+  "@priceoffsession": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "images": "  images  ",
+  "@images": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "enternumberofthemedicalstaffincenter": " enter number of the medical staff in center ",
+  "@enternumberofthemedicalstaffincenter": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "videos": "  videos  ",
+  "@videos": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "save": "  save  ",
+  "@save": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "centerinformation": "  center information  ",
+  "@centerinformation": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "location": "  location  ",
+  "@location": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "time": "  time  ",
+  "@time": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterTimeofopeningandcloseing": "  enter Time of opening and closeing of the center  ",
+  "@enterTimeofopeningandcloseing": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "medicalstaff": "Medical staff",
+  "@medicalstaff": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "openingdate": "Opening date",
+  "@openingdate": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactus": "Contact Us",
+  "@contactus": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservationbtn": "Reservation",
+  "@reservationbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "message": " Message",
+  "@message": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consult": "Consult",
+  "@consult": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "qualifications": "Qualifications",
+  "@qualifications": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "source": "Source",
+  "@source": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "year": "Year",
+  "@year": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "experience": "Experience",
+  "@experience": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "docrequest": "Request",
+  "@docrequest": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "upcoming": "Upcoming ",
+  "@upcoming": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "past": "Past ",
+  "@past": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "current": "Current ",
+  "@current": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addconsult": "Add Consult ",
+  "@addconsult": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "bookreservationtitle": "Book Reservation ",
+  "@bookreservationtitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "enterpatientname": "enter patient name ",
+  "@enterpatientname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "perinterview": "Per Interview ",
+  "@perinterview": {
+    "type": "text",
+    "placeholders": {}
+  },
+    "enterpatientgender": "enter patient gender ",
+  "@enterpatientgender": {
+    "type": "text",
+    "placeholders": {}
+  },
+"enterpatientdescription": "enter description  ",
+  "@enterpatientgender": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consultcontent": "Consult Content  ",
+  "@consultcontent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "publishbtn": "Publish  ",
+  "@publishbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "addarticl": "Add Articl  ",
+  "@addarticl": {
+    "type": "text",
+    "placeholders": {}
+  },
+    "articlname":  "Articl Name ",
+  "@articlname": {
+    "type": "text",
+    "placeholders": {}
+  },
+    "articlcontent":  "Articl Content ",
+  "@articlcontent": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "enterarticlcontent":  " enter articl content ",
+  "@enterarticlcontent": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "addcomment":  "  Add Comment   ",
+  "@addcomment": {
+    "type": "text",
+    "placeholders": {}
+  },
+   "replybtn":  "Reply ",
+  "@replybtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "morebtn":  "  More ",
+  "@morebtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservationNum": "Reservation Number ",
+  "@reservationNum": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reservtype": "Past ",
+  "@reservtype": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "patientname": "Patient Name ",
+  "@patientname": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "patientage": "Age ",
+  "@patientage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "gender": "Gender ",
+  "@gender": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "date": "Date ",
+  "@date": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "description": "Description ",
+  "@description": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confrimbtn": "Confirm ",
+  "@confrimbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancelbtn": "Cancel ",
+  "@cancelbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "callbtn": "Call ",
+  "@callbtn": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consulting": "Consulting ",
+  "@consulting": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "consultbar": "Consult ",
+  "@consultbar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "articls": "Articls ",
+  "@articls": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "articlsbar": "Articl ",
+  "@articlsbar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "researchs": "Researchs ",
+  "@researchs": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "researchbar": "Research ",
+  "@researchbar": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "researchWriter": "Writer ",
+  "@researchWriter": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dateofpublication": "Date of Publication ",
+  "@dateofpublication": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "editbtn": "Edit ",
+  "@editbtn": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
