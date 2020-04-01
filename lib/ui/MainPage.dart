@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:loginn/components/api_services.dart';
 import 'package:loginn/models/doctor_model.dart';
-import 'package:loginn/ui/user_details.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../fragments/doc_consult.dart';
 import '../fragments/home_fragment.dart';
 import '../fragments/reservations_fragment.dart';
 import '../localizations.dart';
-import 'user_profile.dart';
+
 Map<String, dynamic> payloadMap;
 
 Future<String> loadData() async {
@@ -71,7 +71,7 @@ class _MainPageState extends State<MainPage> {
     HomeFragment(),
     DoctorCon(),
     ReservationsFragment(),
-    UserDetials(),
+    
   ];
   int _selectedIndex = 0;
   bool opend = false;
@@ -115,8 +115,7 @@ class _MainPageState extends State<MainPage> {
               icon: Icon(Icons.library_books), title: Text( AppLocalizations.of(context).consandarticls,)),
           BottomNavigationBarItem(
               icon: Icon(Icons.date_range), title: Text( AppLocalizations.of(context).reservation,)),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.message), title: Text(AppLocalizations.of(context).myaccount)),
+         
         ],
         currentIndex: _selectedIndex,
         onTap: (int selectedIndex) {

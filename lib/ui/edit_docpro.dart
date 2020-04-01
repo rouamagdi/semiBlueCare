@@ -12,7 +12,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:loginn/components/api_services.dart';
 import 'package:loginn/models/doctor_model.dart';
 import 'package:loginn/ui/doctor_details.dart';
-import 'package:loginn/ui/user_profile.dart';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../google_map_location_picker.dart';
