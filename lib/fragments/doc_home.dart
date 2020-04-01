@@ -157,18 +157,23 @@ class _DocHomeState extends State<DocHome> with SingleTickerProviderStateMixin {
 }
 
 Widget _buildReservation(reservations) {
+  bool descTextShowFlag = false;
   return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       child: ListView.builder(
         itemBuilder: (context, index) {
           Reservation reservation = reservations[index];
 
-          return Column(
-                          children: <Widget>[
-                            Divider(
-                              height: 3.0,
-                              
-                            ),
+           return Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Card(
+                          elevation: 7,
+                          
+                    child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
                             ListTile(
                               leading: CircleAvatar(
                                 radius: 24.0,
@@ -177,7 +182,9 @@ Widget _buildReservation(reservations) {
                               ),
                               title: Row(
                                 children: <Widget>[
-                                  Text(reservation.statusDescription),
+                                  Flexible(
+                                 child: Text(reservation.statusDescription, //
+                                 maxLines: descTextShowFlag ? 8 : 1,textAlign: TextAlign.start),),
                                   SizedBox(
                                     width: 20.0,
                                   ),
@@ -190,10 +197,7 @@ Widget _buildReservation(reservations) {
                               ),
                               
                               subtitle: Text("date"),
-                              trailing: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 14.0,
-                              ),
+                              
                             ),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -217,7 +221,7 @@ Widget _buildReservation(reservations) {
                                 ),
                               ],
                             ),
-                          ]);
+                          ]))));
         },
         itemCount: reservations.length,
       ));

@@ -7,12 +7,15 @@ import 'package:flutter/material.dart' as prefix0;
 import 'package:image_picker/image_picker.dart';
 import 'package:loginn/components/api_services.dart';
 import 'package:loginn/components/articlsadd.dart';
+import 'package:loginn/models/login_model.dart';
+import 'package:loginn/ui/user_profile.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import "../ui/doctor_main.dart";
 import '../components/addconsult.dart';
 import '../components/user_reservation.dart';
 import '../localizations.dart';
 import '../style/theme.dart' as Theme;
+import 'MainPage.dart';
 import 'chat_home.dart';
 import 'edit_docpro.dart';
 import '../models/doctor_model.dart';
@@ -64,7 +67,7 @@ Map<String, dynamic> parseJwt() {
   return payloadMap;
 }
 
-class DoctorDeitals extends StatefulWidget {
+class UserDetials extends StatefulWidget {
   //Doctor doctor;
   //int index;
   //DoctorDeitals({this.doctor, this.index});
@@ -72,15 +75,15 @@ class DoctorDeitals extends StatefulWidget {
   //in the constructor, require a Response
 
   @override
-  _DoctorDeitalsState createState() => _DoctorDeitalsState();
+  _UserDetialsState createState() => _UserDetialsState();
 }
 
 
 List<Qualifications> qualification = [];
-Future userProfile;
-Future userQual;
-class _DoctorDeitalsState extends State<DoctorDeitals> {
-  List<Doctor> doctor;
+Future useryProfile;
+
+class _UserDetialsState extends State<UserDetials> {
+ 
 
   bool _status = true;
   File galleryFile;
@@ -89,19 +92,11 @@ class _DoctorDeitalsState extends State<DoctorDeitals> {
   File cameraFile;
   @override
   BuildContext context;
-  //ApiService apiService;
 
-  
-
-  //  bool isVisible = (payload['isFreelancer'] == true);
-  //String doctorUrl = 'http://192.168.56.1:5000/api/freelancers/user/';
-  String qualificationUrl =
-      'http://192.168.56.1:5000/api/freelancers/qualifications';
-  //ApiService apiService;
   @override
   void initState() {
     super.initState();
-    userProfile = ApiService().getdoctor(doctorUrl);
+    useryProfile = ApiService().getuser(userUrl);
   }
 
   @override
@@ -150,7 +145,7 @@ class _DoctorDeitalsState extends State<DoctorDeitals> {
                             context,
                             MaterialPageRoute(builder: (BuildContext context) => EditDoctorProfile())
                             );  */  
-                            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => EditDoctorProfile()));          
+                            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => UserProfile()));          
               },
             ),
           ],
@@ -158,14 +153,14 @@ class _DoctorDeitalsState extends State<DoctorDeitals> {
         //backgroundColor: AppColors.mainColor,
         body: SafeArea(
             child: FutureBuilder(
-                future: userProfile,
+                future: useryProfile,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     if (snapshot.data != null) {
-                      Doctor doctor = snapshot.data;
+                        Login user = snapshot.data;
                       //print(doctor.qualifications[0].title);
-                      qualification = doctor.qualifications;
-                      return buildUserProfile(context, doctor, qualification);
+                     
+                      return buildUserProfile(context, user);
                     }
                   } else if (snapshot.hasError) {
                     return Text(snapshot.error.toString());
@@ -182,7 +177,7 @@ class _DoctorDeitalsState extends State<DoctorDeitals> {
 
 void ok(data) {}
 
-Widget buildUserProfile(context, data, qualifications) {
+Widget buildUserProfile(context, data) {
   return Column(
     children: <Widget>[
       Container(
@@ -202,7 +197,7 @@ Widget buildUserProfile(context, data, qualifications) {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    data.freelancerName,
+                    data.username,
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24),
                   ),
                   SizedBox(

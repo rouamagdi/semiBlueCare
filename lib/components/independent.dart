@@ -99,7 +99,7 @@ return Stack(
                         ),
                         Padding(
                           padding: EdgeInsets.all(5),
-                          child: Text(allfreelancer.id.toString()),
+                          child: Text(allfreelancer.freelancerName),
                         ),
                         Expanded(
                           child: Container(),

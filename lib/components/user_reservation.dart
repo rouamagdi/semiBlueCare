@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
@@ -14,6 +15,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../localizations.dart';
 import '../models/profile.dart';
+import 'UserReservation.dart';
 
 final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
 var preftoken;
@@ -69,6 +71,8 @@ String selected;
   // Group Value for Radio Button.
   int id = 1;
   String reservationUrl= 'http://192.168.56.1:5000/api/reservations/';
+
+  Doctor doctor;
   // reservationUrl = reservationUrl + payload['id'];
   @override
   void initState() {
@@ -79,7 +83,8 @@ String selected;
   @override
   Widget build(BuildContext context) {
      _group = [
-    GroupModel(
+       
+   GroupModel(
         text: "Saturday" + "\n" +  '${widget.doctor.workingDaysandHours.saturday}', index: 1, selected: true),
     GroupModel(
         text: "Sunday" + "\n" + '${widget.doctor.workingDaysandHours.sunday}', index: 2, selected: false),
@@ -202,6 +207,14 @@ String selected;
                                               fontSize: 16.0,
                                               fontWeight: FontWeight.bold),
                                         ),
+                                        Visibility(child:  Text(
+                                          '${widget.doctor.phoneNumber}',
+                                          style: TextStyle(
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        visible: false,)
+                                        
                                       ],
                                     )),
                                 Padding(
@@ -303,12 +316,7 @@ String selected;
                                   ),
                                   
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 25.0, right: 25.0, top: 25.0),
-                                 child:Text(selected== null? "nothing":selected,)
-                                  
-                                ),
+                               
                               ],
                             ),
                           ),
@@ -436,7 +444,7 @@ print(userid);
     if (response.statusCode == 200) {
       print("DoID $doctorid");
       var route = MaterialPageRoute(
-        builder: (BuildContext context) => MainPage(),
+        builder: (BuildContext context) => Userreservation(data: doctor,),
       );
       await Navigator.of(context).push(route);
     } else {

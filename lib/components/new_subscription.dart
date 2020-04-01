@@ -108,7 +108,7 @@ print("In init");
             
             setState(() {
               doctorData = docData;
-            doctorid='${docData.id}';
+         //   doctorid='${docData.id}';
             print(doctorid);
             });
           });

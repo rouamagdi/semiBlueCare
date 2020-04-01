@@ -3,18 +3,18 @@ import 'package:http/http.dart' show Client;
  final String articlsUrl = 'http://192.168.56.1:5000/api/articles';
 
 class Articls {
-  int id;
+  String id;
   String title;
   String body;
   
  Client client = Client();
-  Articls({this.id = 0, this.title, this.body });
+  Articls({this.id , this.title, this.body });
 
   
 
   factory Articls.fromJson(Map<String, dynamic> map) {
     return Articls(
-        id: map["id"], title: map["title"], body: map["body"] );
+        id: map["_id"], title: map["title"], body: map["body"] );
   }
 
   Map<String, dynamic> toJson() {
@@ -23,7 +23,7 @@ class Articls {
 
   @override
   String toString() {
-    return 'id: $id, name: $title, email: $body,';
+    return 'id: $id, name: $title, body: $body,';
   }
 
   getArticls() {}

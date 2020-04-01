@@ -102,6 +102,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
   final FocusNode doctorResource = FocusNode();
   final FocusNode doctorDate = FocusNode();
   final FocusNode doctorExperiences = FocusNode();
+  final FocusNode doctorPhoneNumber = FocusNode();
   final FocusNode satday = FocusNode();
   final FocusNode sunday = FocusNode();
   final FocusNode monday = FocusNode();
@@ -127,6 +128,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
   TextEditingController _doctorDate = TextEditingController();
   TextEditingController _doctorSpecilaist = TextEditingController();
   TextEditingController _doctorExperiences = TextEditingController();
+  TextEditingController _doctorPhoneNumber = TextEditingController();
  
   List<Widget> list = List();
   List<Widget> qual = List();
@@ -394,6 +396,59 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                                                       //initialValue: "Ahmad",
                                                       focusNode: doctorName,
                                                       controller: _doctorName,
+
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            AppLocalizations.of(
+                                                                    context)
+                                                                .susername,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              )),
+                                                 Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 25.0,
+                                                  right: 25.0,
+                                                  top: 25.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: <Widget>[
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        AppLocalizations.of(
+                                                                context)
+                                                            .sphone,
+                                                        style: TextStyle(
+                                                            fontSize: 16.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              )),
+                                          Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 25.0,
+                                                  right: 25.0,
+                                                  top: 2.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: <Widget>[
+                                                  Flexible(
+                                                    child: TextFormField(
+                                                      //initialValue: "Ahmad",
+                                                      focusNode: doctorPhoneNumber,
+                                                      controller: _doctorPhoneNumber,
 
                                                       decoration:
                                                           InputDecoration(
@@ -1460,6 +1515,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                           textEditingControllersAwardDateDB.clear();
                           Doctor freelancer = snapshot.data;
                           _doctorName.text = freelancer.freelancerName;
+                          _doctorPhoneNumber.text=freelancer.phoneNumber.toString();
                           _doctorDescription.text = freelancer.summary;
                           _doctorSpecialization.text =
                               freelancer.specialization;
@@ -1724,6 +1780,59 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                                                       ),
                                                     ],
                                                   )),
+                                                                                                   Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 25.0,
+                                                  right: 25.0,
+                                                  top: 25.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: <Widget>[
+                                                  Column(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.start,
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: <Widget>[
+                                                      Text(
+                                                        AppLocalizations.of(
+                                                                context)
+                                                            .sphone,
+                                                        style: TextStyle(
+                                                            fontSize: 16.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              )),
+                                          Padding(
+                                              padding: EdgeInsets.only(
+                                                  left: 25.0,
+                                                  right: 25.0,
+                                                  top: 2.0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: <Widget>[
+                                                  Flexible(
+                                                    child: TextFormField(
+                                                      //initialValue: "Ahmad",
+                                                      focusNode: doctorPhoneNumber,
+                                                      controller: _doctorPhoneNumber,
+
+                                                      decoration:
+                                                          InputDecoration(
+                                                        labelText:
+                                                            AppLocalizations.of(
+                                                                    context)
+                                                                .susername,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              )),
                                               Padding(
                                                   padding: EdgeInsets.only(
                                                       left: 25.0,
@@ -2968,6 +3077,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
       //'avatar': _image != null ? 'data:image/png;base64,' +  base64Encode(_image.readAsBytesSync()) : '',
       'userid': '$userid',
       'freelancerName': _doctorName.text,
+      'phoneNumber':_doctorPhoneNumber.text.toString(),
       'summary': _doctorDescription.text,
       'nationality': _doctorNationality.text,
       'experiences': _doctorExperiences.text,

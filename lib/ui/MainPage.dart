@@ -2,6 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:loginn/components/api_services.dart';
+import 'package:loginn/models/doctor_model.dart';
+import 'package:loginn/ui/user_details.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../fragments/doc_consult.dart';
@@ -52,24 +54,29 @@ Future<Map<String, dynamic>> parseJwt() async {
   return payloadMap;
 }
 class MainPage extends StatefulWidget {
+  Doctor doctor;
   @override
   _MainPageState createState() => _MainPageState();
 }
 Future userReservation;
 final scaffoldKey = GlobalKey<ScaffoldState>();
+String doctorUrl = 'http://192.168.56.1:5000/api/freelancers/user/';
   String userAllReservationUrl='http://192.168.56.1:5000/api/reservations/requests/';
-  
+  String userUrl='http://192.168.56.1:5000/api/users/current';
+Future doctorProfile;
+Doctor doctorData;
 class _MainPageState extends State<MainPage> {
   Map<String, dynamic> _payload;
   List<Widget> _fragments = [
     HomeFragment(),
     DoctorCon(),
     ReservationsFragment(),
-    UserProfile(),
+    UserDetials(),
   ];
   int _selectedIndex = 0;
   bool opend = false;
-
+ String freelancerUrl = 'http://192.168.56.1:5000/api/freelancers/';
+  
   @override
   void initState() {
     // TODO: implement initState
@@ -79,8 +86,15 @@ class _MainPageState extends State<MainPage> {
         _payload = onValue;
         if (_payload.isNotEmpty) {
           userAllReservationUrl = "http://192.168.56.1:5000/api/reservations/requests/${_payload['id']}";
+          userUrl='http://192.168.56.1:5000/api/users/current/${_payload['id']}';
       print(userAllReservationUrl);
-          
+            ApiService().getdoctor(doctorUrl).then((docData) {
+            
+            setState(() {
+              doctorData = docData;
+         //   doctorAllReservationUrl='http://192.168.56.1:5000/api/reservations/orders/${docData.id}';
+            });
+          });
         }
       });
   }

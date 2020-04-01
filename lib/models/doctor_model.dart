@@ -71,6 +71,7 @@ List<Qualifications> qualificationFromJson(String jsonData) {
 class Doctor {
   String id;
   String freelancerName;
+  int phoneNumber;
   String location;
   String summary;
   String nationality;
@@ -92,6 +93,7 @@ class Doctor {
     this.user,
     this.sessionPrice,
     this.qualifications,
+    this.phoneNumber,
     this.workingDaysandHours
   });
 
@@ -102,6 +104,7 @@ class Doctor {
     return Doctor(
         id: map['_id'],
         freelancerName: map["freelancerName"],
+        phoneNumber:map['phoneNumber'],
         summary: map["summary"],
         nationality: map["nationality"],
         experiences: map["experiences"],

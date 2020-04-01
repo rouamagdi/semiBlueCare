@@ -119,7 +119,7 @@ class _ReservationsFragmentState extends State<ReservationsFragment>  {
                         {
                     if (snapshot.hasData) {
                       if (snapshot.data != null) {
-                      List< UserReservation> reservations = snapshot.data;
+                      List< Reservationy> reservations = snapshot.data;
                         return _buildReservation(reservations);
                       }
                     } else if (snapshot.hasError){
@@ -141,20 +141,26 @@ class _ReservationsFragmentState extends State<ReservationsFragment>  {
   }
 }
  Widget _buildReservation(reservations) {
+   bool descTextShowFlag = false;
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: ListView.builder(
           itemBuilder: (context, index) {
-            UserReservation userreservation = reservations[index];
+            Reservationy userreservation = reservations[index];
 
 
-            return  Column(
+           
+           return Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Card(
+                          elevation: 7,
+                          
+                    child: Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                               Divider(
-                              height: 12.0,
-                            ),
-                              ListTile(
+                            ListTile(
                               leading: CircleAvatar(
                                 radius: 24.0,
                                 backgroundImage:
@@ -162,22 +168,23 @@ class _ReservationsFragmentState extends State<ReservationsFragment>  {
                               ),
                               title: Row(
                                 children: <Widget>[
-                                  Text(userreservation.statusDescription),
+                                  Flexible(
+                                 child: Text(userreservation.statusDescription, //
+                                 maxLines: descTextShowFlag ? 8 : 1,textAlign: TextAlign.start),),
                                   SizedBox(
-                                    width: 16.0,
+                                    width: 20.0,
                                   ),
                                   Text(
-                                    userreservation.age,
+                                   userreservation.age,
                                     style: TextStyle(fontSize: 12.0),
                                   ),
+                                  
                                 ],
                               ),
+                              
                               subtitle: Text("date"),
-                             
-                              trailing: Icon(
-                                Icons.arrow_forward_ios,
-                                size: 14.0,
-                              ),),
+                              
+                            ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[
@@ -197,10 +204,10 @@ class _ReservationsFragmentState extends State<ReservationsFragment>  {
                                       AppLocalizations.of(context).morebtn,
                                       style: TextStyle(color: Colors.blue),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ]);
+                                ),
+                              ],
+                            ),
+                          ]))));
           },
           itemCount: reservations.length,
         ));

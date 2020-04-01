@@ -7,6 +7,7 @@ import 'package:http/http.dart' show Client;
 import 'package:loginn/models/center_model.dart';
 import 'package:loginn/models/consult_model.dart';
 import 'package:loginn/models/doctor_model.dart';
+import 'package:loginn/models/login_model.dart';
 import 'package:loginn/models/reservation_model.dart';
 import 'package:loginn/models/subscribe_model.dart';
 
@@ -93,6 +94,17 @@ var i = 200;
     }
    //});
   }
+   Future getuser(userUrl) async {
+    //return this._memoizer.runOnce(() async  {
+    final response = await client.get("$userUrl");
+    if (response.statusCode == 200) {
+      final parsed = jsonDecode(response.body);
+      return Login.fromJson(parsed);
+    } else {
+      return null;
+    }
+   //});
+  }
   Future<List<Doctor>> getFreelancers() async {
   
     final response = await client.get("$allFreelancerUrl");
@@ -119,10 +131,11 @@ Future<List<Reservation>> getReservations(doctorAllReservationUrl) async {
     
   }
 
-  Future<List<UserReservation>> getuserReservations(userAllReservationUrl) async {
+  Future<List<Reservationy>> getuserReservations(userAllReservationUrl) async {
   
     final response = await client.get("$userAllReservationUrl");
     if (response.statusCode == 200) {
+      print(response.body);
       return userreservationFromJson(response.body);      
     } else {
       return null;
@@ -143,6 +156,22 @@ Future<List<Reservation>> getReservations(doctorAllReservationUrl) async {
       return Centery.fromJson(parsed);
     } else {
       return null;
+    }
+    
+  }
+   Future<List<Centery>> getCenters(centersUrl) async {
+    final response = await client.get("$centersUrl");
+    if (response.statusCode == 200) {
+     // print(response.body.toString());
+     print(response.body);
+      return centerFromJson(response.body);
+
+     
+      
+      
+    } else {
+      return null;
+    
     }
     
   }

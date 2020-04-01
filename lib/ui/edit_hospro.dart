@@ -9,6 +9,7 @@ import 'package:http/http.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:loginn/components/api_services.dart';
+import 'package:loginn/components/goverment.dart';
 import 'package:loginn/google_map_location_picker.dart';
 import 'package:loginn/models/center_model.dart';
 import 'package:loginn/style/theme.dart' as Theme;
@@ -20,6 +21,15 @@ import 'hospital_details.dart';
 var preftoken;
 Map payloadMap;
 List<Spcialists> specailist;
+class HospitalType {
+  String name;
+  int index;
+  HospitalType({this.name, this.index});
+}
+String selected;
+
+  // Group Value for Radio Button.
+  int id = 1;
 Future<String> loadData() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
 
@@ -113,6 +123,15 @@ String radioItem = '';
   String specailistrUrl = 'http://192.168.56.1:5000/api/centers/spcialists';
    Map payload = parseJwt();
   String centerUrl = 'http://192.168.56.1:5000/api/centers/user/';
+   List<HospitalType> fList = [
+    HospitalType(
+      index: 1,
+      name: "goverment",
+    ),
+    HospitalType(
+      index: 2,
+      name: "Private",
+    ),];
    @override
    initState() {
     // TODO: implement initState
@@ -122,10 +141,12 @@ String radioItem = '';
      hospitalProfile = ApiService().getCenter(centerUrl);
     setState(() {
 
+ 
       
      });}
   @override
   Widget build(BuildContext context) {
+    
     Future imageSelectorGallery() async {
       var image = await ImagePicker.pickImage(
         source: ImageSource.gallery,
@@ -174,7 +195,7 @@ String radioItem = '';
                       print("No data in snapshot");
                       return Form(
           key: formKey,
-          child: ListView(
+          child: Column(
             children: <Widget>[
               Column(
                 children: <Widget>[
@@ -337,27 +358,7 @@ String radioItem = '';
                                       mainAxisSize: MainAxisSize.max,
                                       children: <Widget>[
                                         
-                             /*            RadioListTile(
-              groupValue: radioItem,
-              title: Text('govermental'),
-              value: 'Item 1',
-              onChanged: (val) {
-                setState(() {
-                  radioItem = val;
-                });
-              },
-            ),
- 
-           RadioListTile(
-              groupValue: radioItem,
-              title: Text('Private'),
-              value: 'Item 2',
-              onChanged: (val) {
-                setState(() {
-                  radioItem = val;
-                });
-              },
-            ),*/
+                               _buildRadio(),
                                                                     ],
                                     )),
                                 Padding(
@@ -1098,36 +1099,18 @@ String radioItem = '';
                                         ),
                                       ],
                                     )),
-                                Padding(
+                                     Padding(
                                     padding: EdgeInsets.only(
                                         left: 25.0, right: 25.0, top: 2.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: <Widget>[
                                         
-                             /*            RadioListTile(
-              groupValue: radioItem,
-              title: Text('govermental'),
-              value: 'Item 1',
-              onChanged: (val) {
-                setState(() {
-                  radioItem = val;
-                });
-              },
-            ),
- 
-           RadioListTile(
-              groupValue: radioItem,
-              title: Text('Private'),
-              value: 'Item 2',
-              onChanged: (val) {
-                setState(() {
-                  radioItem = val;
-                });
-              },
-            ),*/
+                               _buildRadio(),
                                                                     ],
                                     )),
+                                
+                               
                                 Padding(
                                     padding: EdgeInsets.only(
                                         left: 25.0, right: 25.0, top: 25.0),
@@ -1620,6 +1603,25 @@ String radioItem = '';
                          } ),
     ));
   }
+   Widget _buildRadio(){
+return Row(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children:fList.map((hospital)=>Row(
+    children: <Widget>[
+      Radio(value: hospital.index,
+      groupValue:id ,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      onChanged: (value){
+        setState(() {
+          id=value;
+          selected=hospital.name;
+        });
+      },),
+      Text(hospital.name),
+    ],
+  )).toList(),
+  );
+ }
   String _decodeBase64(String str) {
     String output = str.replaceAll('-', '+').replaceAll('_', '/');
 
@@ -1639,6 +1641,7 @@ String radioItem = '';
     return utf8.decode(base64Url.decode(output));
   }
   void hospitalEditProfile(BuildContext context) async {
+     dynamic bodyToSend ;
      final String centerUrl = 'http://192.168.56.1:5000/api/centers';
     
     //post body
@@ -1664,7 +1667,13 @@ String radioItem = '';
       Map payload = parseJwt(preftoken);
       //print(payload);
 var userid = payload['id'];
-    dynamic bodyToSend = {
+var type=selected;
+if(selected =="goverment"){
+
+
+
+print(type);
+     bodyToSend = {
       //'avatar': _image != null ? 'data:image/png;base64,' +  base64Encode(_image.readAsBytesSync()) : '',
       'userid':'$userid',
       'centerName': _centerName.text,
@@ -1674,8 +1683,23 @@ var userid = payload['id'];
       'openDate':_centerLanuch.text,
       //'location'_pickedLocation.toString(),
       'staff':_centerMedicalStaff.text,
-     
+     'isGovernmental':true,
+     'isPrivate':false
+    };}else{
+        bodyToSend = {
+      //'avatar': _image != null ? 'data:image/png;base64,' +  base64Encode(_image.readAsBytesSync()) : '',
+      'userid':'$userid',
+      'centerName': _centerName.text,
+      'summary':_centerDescription.text,
+      'maximumNumberOfPatients':_centerCapcity.text,
+      'openingTime':_centerTime.text,
+      'openDate':_centerLanuch.text,
+      //'location'_pickedLocation.toString(),
+      'staff':_centerMedicalStaff.text,
+     'isGovernmental':false,
+     'isPrivate':true
     };
+    }
     dynamic headers = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',

@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:loginn/google_map_location_picker.dart';
@@ -56,7 +57,7 @@ final formKey = GlobalKey<FormState>();
  final format1 = DateFormat("hh:mm a");
 int _count = 1;
  int _value2 = 0;
-
+ bool descTextShowFlag = false;
   @override
 Widget build(BuildContext context) {
    
@@ -80,14 +81,14 @@ Widget build(BuildContext context) {
             children: <Widget>[
               
               
-               Container(
+               Card(
 
-              
+              elevation: 7,
                 color: Colors.white,
               
                 
                 child: Padding(
-                  padding: EdgeInsets.only(bottom: 30.0, left: 9.0, right: 9.0, top: 10.0),
+                  padding: EdgeInsets.only(bottom: 70.0, left: 12.0, right: 12.0, top: 10.0),
                   child: Column(
                     
                     children: <Widget>[
@@ -319,21 +320,19 @@ Widget build(BuildContext context) {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                 
-                                 Text(
+                             
+                               
+                                 Flexible(
+                               child:  Text(
                                    '${widget.reservation.statusDescription}',
                                           style: TextStyle(
                                         fontSize: 16.0,
                                          color: Colors.grey,
                                         fontWeight: FontWeight.bold),
-                                  ),
+                                  ),),
                                 ],
-                              ),
-                            ],
+                            
+                            
                           )),
                       
                     ],

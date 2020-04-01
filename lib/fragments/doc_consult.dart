@@ -120,6 +120,7 @@ class _DoctorConState extends State<DoctorCon>
                     AsyncSnapshot<List<Articls>> snapshot) {
                   if (snapshot.hasData) {
                     if (snapshot.data != null) {
+                      print(snapshot.data);
                       List<Articls> articls = snapshot.data;
                       return _buildListView(articls);
                     }
@@ -158,6 +159,7 @@ class _DoctorConState extends State<DoctorCon>
                 
 
   Widget _buildListView(List<Articls> articls) {
+    bool descTextShowFlag = false;
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: ListView.builder(
@@ -167,6 +169,7 @@ class _DoctorConState extends State<DoctorCon>
 
             return Padding(
                 padding: const EdgeInsets.only(top: 8.0),
+                
                 child: Card(
                     elevation: 10,
                     child: Padding(
@@ -178,7 +181,7 @@ class _DoctorConState extends State<DoctorCon>
                                 articl.title,
                                 style: Theme.of(context).textTheme.title,
                               ),
-                              Text(articl.body),
+                              Text(articl.body,maxLines: descTextShowFlag ? 8 : 1,textAlign: TextAlign.start),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[
@@ -211,6 +214,7 @@ class _DoctorConState extends State<DoctorCon>
            
 
   Widget _buildListView1(List<Consult> consults) {
+    bool descTextShowFlag = false;
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: ListView.builder(
@@ -226,8 +230,9 @@ class _DoctorConState extends State<DoctorCon>
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text(consult.consultationBody),
-                              
+                              Flexible(
+                              child:Text(consult.consultationBody, maxLines: descTextShowFlag ? 8 : 1,textAlign: TextAlign.start),
+                              ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: <Widget>[

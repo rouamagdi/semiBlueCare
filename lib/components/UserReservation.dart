@@ -1,35 +1,54 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:loginn/google_map_location_picker.dart';
+import 'package:loginn/models/doctor_model.dart';
 import 'package:loginn/models/reservation_model.dart';
 import 'package:loginn/models/reservation_model.dart';
 import 'package:loginn/models/reservation_model.dart';
 import 'package:loginn/style/theme.dart' as Theme;
-
+import 'package:url_launcher/url_launcher.dart';
+import '../ui/MainPage.dart';
 import '../localizations.dart';
-import '../models/profile.dart';
+import '../ui/doctor_profile.dart';
 import 'api_services.dart';
 final GlobalKey<ScaffoldState> _scaffoldState = GlobalKey<ScaffoldState>();
 
 
 class Userreservation extends StatefulWidget {
-   UserReservation userreservation;
+   Reservationy userreservation;
+   Doctor data;
    int index;
    
-  Userreservation({this.userreservation,this.index});
+  Userreservation({this.userreservation,this.data,this.index});
 
   @override
   _UserreservationState createState() => _UserreservationState();
 }
  File _image;
- 
+ Future doctorProfile;
+ String doctorid;
 class _UserreservationState extends State<Userreservation> {
   BuildContext context;
   ApiService apiService;
    
+   @override
+    void initState() {
+      super.initState();
+    ApiService().getdoctor(doctorUrl).then((docData) {
+            
+            setState(() {
+              doctorData = docData;
+            doctorid='${docData.id}';
+            print(doctorid);
+            });
+          });
+     
+  
+    }
 final formKey = GlobalKey<FormState>();
  final format = DateFormat("yyyy-MM-dd");
  final format1 = DateFormat("hh:mm a");
@@ -111,13 +130,15 @@ Widget build(BuildContext context) {
                             children: <Widget>[
                                Icon(Icons.call,color: Colors.black87,),
                                SizedBox(width: 10.0),
-                                Text(
+                                FlatButton(
+              onPressed: () => launch('${widget.userreservation.doctor.phoneNumber}'),
+                                child:  Text('${widget.userreservation.doctor.phoneNumber}'
                           
-                          '342545345',
+                           ,
                           style: TextStyle(
                               color: Colors.black.withOpacity(0.5),
                               fontWeight: FontWeight.bold),
-                       ),
+                       ),),
                              
                             ],
                           )),
@@ -281,22 +302,20 @@ Widget build(BuildContext context) {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: <Widget>[
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                 
-                                 Text(
+                             
+                              
+                                 Flexible(
+                                 child:Text(
                                    '${widget.userreservation.statusDescription}',
                                           style: TextStyle(
                                         fontSize: 16.0,
                                          color: Colors.grey,
                                         fontWeight: FontWeight.bold),
-                                  ),
+                                  ),),
                                 ],
                               ),
-                            ],
-                          )),
+                            
+                          )
                       
                     ],
                     

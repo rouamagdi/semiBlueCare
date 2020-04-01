@@ -1,4 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:loginn/components/api_services.dart';
+import 'package:loginn/models/center_model.dart';
+import 'package:loginn/models/doctor_model.dart';
 
 import '../components/goverment.dart';
 import '../components/independent.dart';
@@ -7,15 +12,34 @@ import '../components/private.dart';
 import '../localizations.dart';
 import '../ui/chat_home.dart';
 import '../ui/notifications.dart';
+import 'package:http/http.dart' as http;
 
 class HomeFragment extends StatefulWidget {
   @override
   _HomeFragmentState createState() => _HomeFragmentState();
 }
-
+Future center;
 class _HomeFragmentState extends State<HomeFragment> {
+    String centersUrl = 'http://192.168.56.1:5000/api/centers/all';
+     TextEditingController controller = new TextEditingController();
+String freeUrl='http://192.168.56.1:5000/api/freelancers';
+  
+  
+
+
+   @override
+  void initState() {
+    super.initState();
+    setState(() {
+     
+     center = ApiService().getCenters(centersUrl);
+      print(centersUrl);
+   
+    });}
+    
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF005ab3),
@@ -64,6 +88,7 @@ class _HomeFragmentState extends State<HomeFragment> {
                     height: 50,
                     child: TextField(
                       keyboardType: TextInputType.text,
+                       controller: controller,
                       autofocus: false,
                       style: TextStyle(color: Colors.black),
                       decoration: InputDecoration(
@@ -80,14 +105,12 @@ class _HomeFragmentState extends State<HomeFragment> {
                         ),
                         focusedBorder: UnderlineInputBorder(),
                       ),
-                      onChanged: (value) {
-                        if (value.isNotEmpty) {
-                          setState(() {});
-                          //FocusScope.of(context).requestFocus(_bf);
-                        }
-                      },
+                      // onChanged: 
                     ),
-                  )),
+                  )
+                  
+                  ),
+                 
               SliverPersistentHeader(
                 delegate: _SliverAppBarDelegate(
                   TabBar(
@@ -109,9 +132,9 @@ class _HomeFragmentState extends State<HomeFragment> {
             ];
           },
           body: TabBarView(
+            
             children: [
               Container(
-
                   //height: 450,
                   child: GridView.builder(
                       itemCount: 11,
@@ -122,22 +145,13 @@ class _HomeFragmentState extends State<HomeFragment> {
                       })),
               Container(
                   //height: 450,
-                  child: GridView.builder(
-                      itemCount: 11,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, childAspectRatio: .7),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Goverment();
-                      })),
+                  
+                        child: Goverment(),
+                      ),
               Container(
                   //height: 450,
-                  child: GridView.builder(
-                      itemCount: 11,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2, childAspectRatio: .7),
-                      itemBuilder: (BuildContext context, int index) {
-                        return Private();
-                      })),
+               child:Private(),
+                    ),
               Container(
                   //height: 450,
                  /* child: GridView.builder(
@@ -155,7 +169,11 @@ class _HomeFragmentState extends State<HomeFragment> {
       ),
     );
   }
+  
 }
+ 
+
+
 
 class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
   _SliverAppBarDelegate(this._tabBar);

@@ -6,12 +6,14 @@ import 'doctor_model.dart';
 class User {
   String id;
   String fullname;
-  User({this.id, this.fullname});
+int phoneNumber;
+  User({this.id, this.fullname,this.phoneNumber});
 
   factory User.fromJson(Map<String, dynamic> json) {
     return User(
       id: json['_id'],
       fullname: json['fullname'],
+      phoneNumber:json['phoneNumber']
     );
   }
 }
@@ -69,12 +71,16 @@ String reservationToJson(Reservation data) {
 class Freelancer {
   String id;
   String freelancerName;
-  Freelancer({this.id,this.freelancerName});
+  int phoneNumber;
+  
+  Freelancer({this.id,this.freelancerName,this.phoneNumber});
 
   factory Freelancer.fromJson(Map<String, dynamic> json) {
     return Freelancer(
       id: json['_id'],
       freelancerName:json['freelancerName'],
+      phoneNumber:json['phoneNumber'],
+     
 
     );
   }
@@ -82,7 +88,7 @@ class Freelancer {
 
 
 
-class UserReservation {
+class Reservationy {
   String id;
   String statusDescription;
   String age;
@@ -94,13 +100,13 @@ class UserReservation {
   
  
 
-  UserReservation({this.id, this.statusDescription,  this.age,this.gender,this.bookingDate,this.doctor, this.patient });
+  Reservationy({this.id, this.statusDescription,  this.age,this.gender,this.bookingDate,this.doctor, this.patient });
 
   
 
-  factory UserReservation.fromJson(Map<String, dynamic> map) {
+  factory Reservationy.fromJson(Map<String, dynamic> map) {
   
-    return UserReservation(
+    return Reservationy(
       id: map["_id"],
         statusDescription: map["statusDescription"],
          age: map["age"], 
@@ -123,12 +129,12 @@ class UserReservation {
 
 }
 
-List<UserReservation> userreservationFromJson(String jsonData) {
+List<Reservationy> userreservationFromJson(String jsonData) {
   final data = json.decode(jsonData);
-  return List<UserReservation>.from(data.map((item) => UserReservation.fromJson(item)));
+  return List<Reservationy>.from(data.map((item) => Reservationy.fromJson(item)));
 }
 
-String userreservationToJson(Reservation data) {
+String userreservationToJson(Reservationy data) {
   final jsonData = data.toJson();
   return json.encode(jsonData);
 }
